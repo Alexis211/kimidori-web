@@ -1,0 +1,21 @@
+~~LOAD base
+~~DEFINE title
+	<title>Erreur | Kimidori</title>
+~~DEFINE body
+	<div id="top">
+		<h1>Une erreur a eu lieu...</h1>
+	</div>
+	<div class="bodyblock">
+		<p style="text-align: center; color: red; font-family: monospace, courier, serif">
+			{.section Error}
+				HTTP ERROR {Code}
+				{.section Error}<br />{@}{.end}
+			{.or}
+				(erreur inconnue, すみません)
+			{.end}
+		</p>
+	</div>
+~~DEFINE bottom
+{.section Request}
+	<a href="{URL.RawPath}">Ré-essayer</a>
+{.end}

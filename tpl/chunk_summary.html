@@ -1,0 +1,40 @@
+~~LOAD base
+~~DEFINE title
+{.section Data}
+	<title>{.section Chunk}{Title} | {.end}{.section Lesson}{Info.Title} | {.end}Kimidori</title>
+{.end}
+~~DEFINE body
+{.section Data.Chunk}
+	<div id="top">
+		<h1>{.section Lesson}{Info.Title}{.end} - {Title}</h1>
+		<p>{DescHTML}</p>
+	</div>
+	<div class="leftblock">
+		<h2>Sommaire</h2>
+		<ol>
+		{.repeated section Summary}
+			<li>{@}</li>
+		{.end}
+		</ol>
+		<button onclick="window.location='/chunk_read/{Level.Id}/{Lesson.Id}/{Id}'">
+			<img src="/image/blue_arrow_r.png" />Lire</button><br />
+	</div>
+	<div class="rightblock">
+		<h2>Eléments à apprendre</h2>
+		{.repeated section SRSItems}
+			<div class="{.section Long}srs_item_big{.or}srs_item{.end}">
+				<h6>{Group} / {Subgroup}</h6>
+				<strong>{HTMLWithFuri}</strong>
+				{Meaning}
+			</div>
+		{.end}
+	</div>
+{.end}
+~~DEFINE bottom
+{.section Data.Chunk}
+	<a href="/chunk_read/{Level.Id}/{Lesson.Id}/{Id}">Lire le cours</a>
+{.end}
+{.section Data.Lesson}
+	<a href="/browse/{Level.Id}/{Id}">Retour à la leçon</a>
+{.end}
+

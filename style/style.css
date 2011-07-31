@@ -1,0 +1,480 @@
+/*
+	style.css for kimidori-web
+	2011, Alex AUVOLAT
+	Permission is granted to use, copy, modify, distribute, sell or make any use of this
+	work without condition.
+*/
+
+/* ************************** GLOBAL STYLE INDICATIONS ************************** */
+
+* {
+	margin: 0px;
+	padding: 0px;
+	text-align: justify;
+	font-family: Arial;
+	font-size: 15px;
+}
+
+body {
+	background: #eee;
+}
+
+#tout {
+	width: 950px;
+	margin: auto;
+	margin-top: 8px;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+a {
+	color: #0022BB;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: 0px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.4em;
+}
+
+h2, h3, h4 {
+	padding-top: 8px;
+	padding-bottom: 4px;
+}
+
+h2 {
+	margin-left: 12px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+h3 {
+	margin-left: 12px;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+h4 {
+	margin-left: 12px;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+p, ul, ol, li {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+p {
+	text-indent: 8px;
+}
+
+ul, ol {
+	padding-left: 40px;
+	margin: 4px;
+}
+
+.tool_link {
+	float: right;
+	font-size: 0.8em;
+	font-style: italic;
+	margin-top: 8px;
+	margin-right: 8px;
+}
+
+ul img, ol img {
+	margin-right: 8px;
+	height: 12px;
+}
+
+/* tables */
+
+th, td {
+	min-width: 50px;
+	text-align: left;
+	vertical-align: top;
+	padding: 2px;
+}
+th {
+	text-align: center;
+	font-weight: bold;
+	background-color: #ddd;
+}
+
+
+/************* FORMS *********/
+
+label {
+	text-align: right;
+	border-bottom: 1px solid #ccc;
+
+	display: inline-block;
+	width: 200px;
+	padding-top: 8px;
+}
+
+
+input,  button {
+	border: 0px;
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	background: white;
+	color: black;
+
+	width: 200px;
+	margin-left: 8px;
+	padding-left: 4px;
+}
+input[type=radio], input[type=checkbox] {
+	width: 24px;
+}
+
+input[type=submit], button {
+	border: 1px solid #aaa;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+
+	min-width: 130px;
+}
+
+button:active, input[type=submit]:active {
+	border: 1px solid black;
+	background-color: #eee;
+}
+
+button:focus, input[type=submit]:focus {
+	background-color: #eee;
+}
+
+button {
+	padding: 4px;
+	margin-top: 8px;
+}
+button img {
+	margin-left: 8px;
+	margin-right: 12px;
+	margin-bottom: -2px;
+}
+
+#dicbar {
+	margin-left: 8px;
+	margin-bottom: 8px;
+}
+#dicbar label {
+	width: 100px;
+	margin-left: 8px;
+}
+#dicbar input {
+	width: 150px;
+}
+
+.big_form, .review_form {
+	margin: 16px;
+}
+
+.big_form label, .review_form label {
+	position: absolute;
+}
+
+.big_form input {
+	margin-top: 8px;
+	margin-left: 216px;
+}
+
+.rclabel {
+	text-align: left;
+	border: 0px;
+}
+
+/* ************************** TOP BAR && BOTTOM BAR *************************** */
+
+#topbar, #bottombar {
+	background: #ddd;
+}
+
+#topbar {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 8px;
+}
+
+#bottombar {
+	clear: both;
+	border-top: 1px solid #ccc;
+	margin-top: 8px;
+}
+
+.menubar a {
+	display: inline-block;
+	padding: 12px;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+.menubar .right {
+	float: right;
+}
+
+/* ************************** PAGE LAYOUT ELEMENTS *************************** */
+
+#top, .leftblock, .rightblock, .bodyblock {
+	margin: 8px;
+	padding: 8px;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+#top {
+	border-bottom: 1px solid #eee;
+}
+
+.leftblock {
+	width: 450px;
+	float: left;
+	border-right: 1px solid #eee;
+	margin-right: 0px;
+}
+
+.rightblock {
+	width: 450px;
+	float: right;
+	border-left: 1px solid #eee;
+	margin-left: 0px;
+}
+
+.bodyblock {
+	padding: 16px;
+}
+
+.bodyblock p, .bodyblock ul, .bodyblock ol {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.bodyblock h1 {
+	margin-bottom: 8px;
+	text-align: left;
+	padding-left: 32px;
+}
+
+.bodyblock .slide {
+	margin-bottom: 16px;
+}
+
+/* ************************ STYLE FOR STUDY-PROGRAM-SPECIFIC ELEMENTS **************** */
+
+.study_resume_item .tool_link {
+	margin-right: 200px;
+}
+
+.study_resume_item a, .study_resume_item span {
+	font-size: 0.8em;
+}
+
+.study_resume_item strong, .study_resume_item_head strong {
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+	font-size: 1em;
+}
+
+.study_resume_item_head h2 {
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 20px;
+}
+
+
+.bar {
+	display: inline-block;
+	width: 230px;
+	margin: 4px;
+	margin-left: 30px;
+}
+
+.study_resume_item .bar {
+	height: 5px;
+	padding-bottom: 6px;
+}
+
+.study_resume_item_head .bar {
+	height: 10px;
+}
+
+.bar .r0, .bar .r1, .bar .r2, .bar .r3, .bar .r4, .bar .di {
+	display: inline-block;
+	height: 100%;
+}
+
+.bar .r0 {
+	background-color: black;
+}
+.bar .r1 {
+	background-color: red;
+}
+.bar .r2 {
+	background-color: #FF7700;
+}
+.bar .r3 {
+	background-color: #FFDD00;
+}
+.bar .r4 {
+	background-color: green;
+}
+.bar .di {
+	background-color: #aaaaaa;
+}
+
+/************************** review system ****************** */
+
+/* some elements of .review_form previously, with .big_form. */
+
+.review_form div {
+	display: inline-block;
+	margin: 8px;
+	width: 400px;
+	height: 60px;
+	margin-left: 216px;
+	text-align: center;
+}
+
+.review_form div span {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.review_form div strong {
+	display: block;
+	text-align: center;
+	font-size: 1.4em;
+}
+
+.review_form button {
+	margin-left: 216px;
+}
+
+.review_form textarea {
+	width: 400px;
+	height: 60px;
+	font-size: 1.4em;
+}
+
+/* ************** SRS items && nice blockquote presentations ************ */
+
+.srs_item, .srs_item_big, blockquote {
+	margin: 8px;
+	padding: 4px;
+	margin-left: 0px;
+}
+
+.srs_item, .srs_item_big {
+	border-left: 2px solid gray;
+	padding-left: 8px;
+}
+
+blockquote {
+	padding-left: 24px;
+}
+
+.srs_item h6, .srs_item_big h6, blockquote h6 {
+	font-size: 0.8em;
+	font-weight: normal;
+	color: gray;
+	float: right;
+}
+
+.srs_item strong, .srs_item_big strong, blockquote strong {
+	font-size: 1.2em;
+	font-weight: normal;
+	padding-left: 16px;
+}
+
+.srs_item strong {
+	display: inline-block;
+	min-width: 130px;
+	padding-right: 16px;
+}
+
+.srs_item_big strong {
+	display: block;
+}
+
+.srs_item .comment, .srs_item_big .comment {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.sib0 {
+	border-left: 2px solid black;
+}
+.sib1 {
+	border-left: 2px solid red;
+}
+.sib2 {
+	border-left: 2px solid #FF7700;
+}
+.sib3 {
+	border-left: 2px solid #FFDD00;
+}
+.sib4 {
+	border-left: 2px solid green;
+}
+
+/* ************* furigana ************** */
+
+.furi {
+	display: inline-block;
+	text-align: center;
+	font-size: 1em;
+}
+
+.furi div {
+	font-size: 0.55em;
+	text-align: center;
+}
+
+.hide_furi {
+	color: transparent;
+}
+.furi:hover .hide_furi {
+	color: black;
+}
+
+/* **************** nice dictionnary ******* */
+
+#dic {
+	position: absolute;
+	background: url("../image/bg_dark_70.png");
+	border-bottom: 1px solid black;
+	width: 918px;
+	padding: 16px;
+	color: white;
+}
+
+#dic button {
+	float: right;
+	clear: right;
+	background: url("../image/bg_light_70.png");
+}
+
+#dic td, #dic th {
+	font-size: 1.0em;
+	font-weight: bold;
+	vertical-align: top;
+	width: 200px;
+	padding-bottom: 8px;
+}
+#dic th {
+	font-size: 1.2em;
+	width: 150px;
+}

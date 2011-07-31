@@ -1,0 +1,43 @@
+~~LOAD base
+~~DEFINE title
+{.section Data}
+	<title>{.section Level}{Info.Name} |{.end} Tous les cours | Kimidori</title>
+{.end}
+~~DEFINE body
+{.section Data}
+	<div id="top">
+		<h1>
+			{.repeated section Levels}
+				<a href="/browse/{Id|str}">{Info.Name|html}</a> - 
+			{.end}
+		</h1>
+		{.section Level}
+			<p><strong>{Info.Name} : </strong>{Info.Description}</p>
+		{.end}
+	</div>
+	<div class="leftblock">
+		{.section Level}
+			<h2>{Info.Name}</h2>
+			<ul>
+			{.repeated section Lessons}
+				<li><a href="/browse/{Level.Id}/{Id}">{Info.Title}</a></li>
+			{.or}
+				Aucun contenu dans cette section.
+			{.end}
+			</ul>
+		{.end}
+	</div>
+	<div class="rightblock">
+		{.section Lesson}
+			<h2>{Info.Title}</h2>
+			<p>{Info.Description}</h2>
+			<ol>
+			{.repeated section Chunks}
+				<li><a href="/chunk_summary/{Level.Id}/{Lesson.Id}/{Id}">{Title}</a></li>
+			{.or}
+				Aucun contenu dans cette section...
+			{.end}
+			</ol>
+		{.end}
+	</div>
+{.end}

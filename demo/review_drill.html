@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" contents="text/html; charset=utf-8" />
+	<title>Révisions | Kimidori</title>
+	<link rel="stylesheet" type="text/css" href="../style/style.css" media="screen" />
+</head>
+<body>
+<div id="tout">
+	<div id="topbar" class="menubar">
+		<a class="right" href="study_home.html">Arrêter et enregistrer</a>
+		<a class="right" href="#">Enregistrer la progression (15/32)</a>
+		<a href="study_home.html">Arrêter et tout oublier</a>
+	</div>
+	<div id="top">
+		<h1>Révisions</h1>
+		<p>Révisions du groupe Kanji - JLPT4.</p>
+		<p>Vous n'êtes pas obligé de remplir les champs de réponse : vous aurez vous-même
+		à dire si vous jugez que vous avez suffisament bien mémorisé l'élément ou pas.</p>
+	</div>
+	<div class="bodyblock">
+		<form onsubmit="return false;" class="review_form">
+			<label for="s">Signification :</label>
+			<div><textarea id="s" tabindex="1"></textarea></div><br />
+			<label>Japonais :</label>
+			<div><strong>[kanji pour 'neko']</strong></div><br />
+			<label for="r">Lecture :</label>
+			<div><textarea id="r" tabindex="2"></textarea></div><br />
+			<button tabindex="3"><img src="../image/blue_arrow_r.png" />Vérifier</button>
+		</form>
+		<hr />
+		(pour la démo) (en vrai, ne pas oublier d'utiliser les setFocus() sur les button)
+		<form onsubmit="return false;" class="review_form">
+			<label for="s">Signification :</label>
+			<div><strong>Chat</strong><span>vous n'aviez pas donné de réponse.</span></div><br />
+			<label>Japonais :</label>
+			<div><strong>[kanji pour 'neko']</strong></div><br />
+			<label for="r">Lecture :</label>
+			<div><strong>neko</strong><span>votre réponse : neko</span></div><br />
+			<label>Commentaire :</label><div>ba il est mignon ce kanji, quoi.</div><br />
+			<label>Note personnelle :</label><div>oui c'est vrai.</div><br />
+			<button tabindex="4"><img src="../image/check.png" />Correct</button><br />
+			<button tabindex="5"><img src="../image/red_cross.png" />Faux</button>
+		</form>
+	</div>
+</div>
+</body>
+</html>

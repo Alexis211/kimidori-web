@@ -1,0 +1,22 @@
+~~LOAD base
+~~DEFINE title
+{.section Data}
+	<title>{.section Chunk}{Title} | {.end}{.section Lesson}{Info.Title} | {.end}Kimidori</title>
+{.end}
+~~DEFINE body
+{.section Data.Chunk}
+	<div id="top">
+		<h1>{.section Lesson}{Info.Title}{.end} - {Title}</h1>
+		{DescHTML}
+	</div>
+	<div class="bodyblock">
+		{Contents}
+	</div>
+{.end}
+~~DEFINE bottom
+{.section Data.Chunk}
+	<a href="/chunk_summary/{Level.Id}/{Lesson.Id}/{Id}">Retour au sommaire</a>
+{.end}
+{.section Data.Lesson}
+	<a href="/browse/{Level.Id}/{Id}">Retour à la leçon</a>
+{.end}
