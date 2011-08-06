@@ -1,0 +1,15 @@
+	<button onclick="Dic.hide()"><img src="/image/red_cross.png">Fermer</button>
+	{.repeated section Data.Dics}
+		<button onclick="Dic.setDic('{Id}')"><img src="/image/green_dot.png">{Name}</button>
+	{.end}
+	{.section Data.Dic}
+		<h3>Résultats dans : {Name}</h3>
+	{.end}
+	<table>
+	{.repeated section Data.Entries}
+		<tr><td>{Reading}</td><th>{Japanese}</th>
+		<td>{.repeated section Meaning}{@}<br />{.end}</td></tr>
+	{.or}
+		Aucun résultat...
+	{.end}
+	</table>

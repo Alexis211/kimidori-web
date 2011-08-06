@@ -4,20 +4,29 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 ~~CALL title
 	<link rel="stylesheet" type="text/css" href="/style/style.css" media="screen" />
+	<script type="text/javascript" src="/js/prototype.js"></script>
+	<script type="text/javascript" src="/js/dic.js"></script>
 </head>
 <body>
 <div id="tout">
-	<form id="dicbar" onsubmit="return false;">
+	<form id="dicbar" onsubmit="Dic.submit();return false;">
 		Dictionnaire : 
 		<label for="dic_fr">français : </label>
 		<input type="text" name="fr" id="dic_fr" />
 		<label for="dic_ja">japonais : </label>
 		<input type="text" name="ja" id="dic_ja" />
 		<input type="submit" value="Chercher" />
+		<img src="/image/red_dot.png" style="display: none" id="dic_busy" />
 	</form>
+	<div id="dic" style="display: none"></div>
 	<div id="topbar" class="menubar">
-		<a class="right" href="/login">S'identifier</a>
-		<a class="right" href="/register">Créer un compte</a>
+	{.section Sess.User}
+		<a class="right" href="/settings">{Username}</a>
+		<a class="right" href="/logout?back={Request.URL.RawPath}">Déconnexion</a>
+	{.or}
+		<a class="right" href="/login?back={Request.URL.RawPath}">S'identifier</a>
+		<a class="right" href="/register?back={Request.URL.RawPath}">Créer un compte</a>
+	{.end}
 		<a href="/">Accueil</a>
 		<a href="/study_home/">Études</a>
 		<a href="/browse/">Tous les cours</a>
@@ -27,9 +36,9 @@
 	<div id="bottombar" class="menubar">
 		<a href="ajstk.org/kimidori" class="right">Comment contribuer ?</a>
 ~~CALL bottom
-{.section Request}
-		<a href="/reload_tpl{URL.RawPath}">reload_tpl</a>
-		<a href="/reload_data{URL.RawPath}">reload_data</a>
+{.section Sess.Admin}
+		<a href="/reload_tpl{Request.URL.RawPath}">reload_tpl</a>
+		<a href="/reload_data{Request.URL.RawPath}">reload_data</a>
 {.end}
 	</div>
 </div>

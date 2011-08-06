@@ -1,0 +1,6 @@
+{
+	"BadUserOrPass": "Nom d'utilisateur ou mot de passe incorect.",
+	"NoSuchLevel": "Ce niveau n'existe pas.",
+	"NoSuchLesson": "Cette leçon n'existe pas.",
+	"NoSuchChunk": "Cette section n'existe pas."
+}

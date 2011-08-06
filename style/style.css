@@ -95,6 +95,12 @@ ul img, ol img {
 	height: 12px;
 }
 
+.error {
+	text-align: center;
+	color: red;
+	font-family: monospace, courier, serif
+}
+
 /* tables */
 
 th, td {
@@ -458,7 +464,7 @@ blockquote {
 	border-bottom: 1px solid black;
 	width: 918px;
 	padding: 16px;
-	color: white;
+	color: #eee;
 }
 
 #dic button {
@@ -471,10 +477,11 @@ blockquote {
 	font-size: 1.0em;
 	font-weight: bold;
 	vertical-align: top;
-	width: 200px;
+	min-width: 150px;
 	padding-bottom: 8px;
+	background: transparent;
 }
 #dic th {
-	font-size: 1.2em;
+	font-size: 1.3em;
 	width: 150px;
 }

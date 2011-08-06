@@ -1,0 +1,27 @@
+~~LOAD base
+~~DEFINE title
+	<title>S'identifier | Kimidori</title>
+~~DEFINE body
+	<div id="top">
+		<h1>Ouvrir une session</h1>
+		<p style="text-align: center">Connectez-vous à votre compte pour reprendre votre
+		apprentissage là où vous en étiez la dernière fois</p>
+	</div>
+	<div class="bodyblock">
+		{.section Data.Error}
+			<p class="error">{@}</p>
+		{.end}
+		<form method="POST" class="big_form">
+			<label for="username">Nom d'utilisateur : </label>
+			<input type="text" name="username" id="username" /><br />
+			<label for="password">Mot de passe : </label>
+			<input type="password" name="password" id="password" /><br />
+			{.section Data.ReturnTo}
+				<input type="hidden" name="back" value="{@}" />
+			{.end}
+			<input type="submit" value="Ok" />
+		</form>
+	</div>
+
+~~DEFINE bottom
+	<a href="/register">Créer un compte</a>
