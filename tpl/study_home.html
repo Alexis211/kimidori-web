@@ -1,0 +1,59 @@
+~~LOAD base
+~~DEFINE title
+{.section Data}
+	<title>Mes études | Kimidori</title>
+{.end}
+~~DEFINE body
+{.section Data}
+	<div id="top">
+		<p class="error">NOT YET IMPLEMENTED. HERE : SRS STATUS</p>
+	</div>
+	<div class="leftblock">
+		{.section Level}
+			<a href="/browse/{Id}" class="tool_link">changer de niveau</a>
+			<h2>{Info.Name}</h2>
+			<ul>
+			{.section LessonsWS}
+				{.repeated section LessonsWS}
+					<li>
+					{.section Available}<img src="/image/orange_arrow_r.png" />{.or}
+					{.section Studying}<img src="/image/blue_arrow_r.png" />{.or}
+					{.section Done}<img src="/image/check.png" />{.or}
+					<img src="/image/red_dot.png" />{.end}{.end}{.end}
+					<a href="/browse/{Lesson.Level.Id}/{Lesson.Id}">{Lesson.Info.Title}</a></li>
+				{.end}
+			{.or}
+				Aucun contenu dans cette section.
+			{.end}
+			</ul>
+		{.or}
+			<p>Vous n'êtes pas en train d'étudier quoi que ce soit.</p>
+			<p>Allez sur la page <a href="/browse">tous les cours</a> pour commencer !</p>
+		{.end}
+	</div>
+	<div class="rightblock">
+		{.section Lesson}
+			<h2>{Info.Title}</h2>
+			<p>{Info.Description}</h2>
+			{.section LessonStudy}
+				<p><strong>État de l'étude :</strong>
+				{.section Studying}en cours{.end}
+				{.section Done}terminé{.end}
+			{.end}
+			<ol>
+			{.repeated section ChunksWS}
+				<li>
+				{.section Reading}<img src="/image/orange_arrow_r.png" />{.or}
+				{.section Repeat}<img src="/image/blue_arrow_r.png" />{.or}
+				{.section Done}<img src="/image/check.png" />{.or}
+				<img src="/image/orange_dot.png" />{.end}{.end}{.end}
+				<a href="/chunk_summary/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}">{Chunk.Title}</a></li>
+			{.or}
+				Aucun contenu dans cette section...
+			{.end}
+			</ol>
+			<button onclick="window.location='/lesson_drill'">
+			<img src="/image/blue_arrow_b_b.png" />Mode apprentissage</button>
+		{.end}
+	</div>
+{.end}

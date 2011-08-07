@@ -41,7 +41,7 @@
 			<ol>
 			{.repeated section ChunksWS}
 				<li>
-				{.section Reading}<img src="/image/orang_arrow_r.png" />{.or}
+				{.section Reading}<img src="/image/orange_arrow_r.png" />{.or}
 				{.section Repeat}<img src="/image/blue_arrow_r.png" />{.or}
 				{.section Done}<img src="/image/check.png" />{.or}
 				<img src="/image/orange_dot.png" />{.end}{.end}{.end}
@@ -53,16 +53,20 @@
 			{.section LessonStudy}
 				{.section Available}
 				<p>Vous avez le niveau de commencer à étudier cette leçon.</p>
-				<button><img src="/image/blue_arrow_r.png" />Commencer la leçon</button>
+				<button onclick="window.location='/go_study/{Lesson.Level.Id}/{Lesson.Id}'">
+				<img src="/image/blue_arrow_r.png" />Commencer la leçon</button>
 				{.or}{.section Studying}
 				<p>Cette leçon est actuellement dans votre liste d'études.</p>
-				<button><img src="/image/blue_arrow_r" />Étudier</button>
+				<button onclick="window.location='/go_study/{Lesson.Level.Id}/{Lesson.Id}'">
+				<img src="/image/blue_arrow_r.png" />Étudier</button>
 				{.or}{.section Done}
 				<p>Vous avez fini d'étudier cette leçon</p>
-				<button><img src="/image/green_arrow_r.png" />Ré-étudier</button>
+				<button onclick="window.location='/go_study/{Lesson.Level.Id}/{Lesson.Id}'">
+				<img src="/image/green_arrow_r.png" />Ré-étudier</button>
 				{.or}
 				<p>Vous n'avez pas encore le niveau d'étudier cette leçon</p>
-				<button><img src="/image/red_arrow_r.png" />Étudier quand même</button>
+				<button onclick="window.location='/go_study/{Lesson.Level.Id}/{Lesson.Id}'">
+				<img src="/image/red_arrow_r.png" />Étudier quand même</button>
 				{.end}{.end}{.end}
 			{.or}
 				<p>Créez un compte pour commencer à étudier cette leçon !</p>
