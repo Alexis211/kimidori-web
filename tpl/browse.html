@@ -19,8 +19,15 @@
 		{.section Level}
 			<h2>{Info.Name}</h2>
 			<ul>
-			{.repeated section Lessons}
-				<li><a href="/browse/{Level.Id}/{Id}">{Info.Title}</a></li>
+			{.section LessonsWS}
+				{.repeated section LessonsWS}
+					<li>
+					{.section Available}<img src="/image/orange_arrow_r.png" />{.or}
+					{.section Studying}<img src="/image/blue_arrow_r.png" />{.or}
+					{.section Done}<img src="/image/check.png" />{.or}
+					<img src="/image/red_dot.png" />{.end}{.end}{.end}
+					<a href="/browse/{Lesson.Level.Id}/{Lesson.Id}">{Lesson.Info.Title}</a></li>
+				{.end}
 			{.or}
 				Aucun contenu dans cette section.
 			{.end}
@@ -32,12 +39,34 @@
 			<h2>{Info.Title}</h2>
 			<p>{Info.Description}</h2>
 			<ol>
-			{.repeated section Chunks}
-				<li><a href="/chunk_summary/{Level.Id}/{Lesson.Id}/{Id}">{Title}</a></li>
+			{.repeated section ChunksWS}
+				<li>
+				{.section Reading}<img src="/image/orang_arrow_r.png" />{.or}
+				{.section Repeat}<img src="/image/blue_arrow_r.png" />{.or}
+				{.section Done}<img src="/image/check.png" />{.or}
+				<img src="/image/orange_dot.png" />{.end}{.end}{.end}
+				<a href="/chunk_summary/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}">{Chunk.Title}</a></li>
 			{.or}
 				Aucun contenu dans cette section...
 			{.end}
 			</ol>
+			{.section LessonStudy}
+				{.section Available}
+				<p>Vous avez le niveau de commencer à étudier cette leçon.</p>
+				<button><img src="/image/blue_arrow_r.png" />Commencer la leçon</button>
+				{.or}{.section Studying}
+				<p>Cette leçon est actuellement dans votre liste d'études.</p>
+				<button><img src="/image/blue_arrow_r" />Étudier</button>
+				{.or}{.section Done}
+				<p>Vous avez fini d'étudier cette leçon</p>
+				<button><img src="/image/green_arrow_r.png" />Ré-étudier</button>
+				{.or}
+				<p>Vous n'avez pas encore le niveau d'étudier cette leçon</p>
+				<button><img src="/image/red_arrow_r.png" />Étudier quand même</button>
+				{.end}{.end}{.end}
+			{.or}
+				<p>Créez un compte pour commencer à étudier cette leçon !</p>
+			{.end}
 		{.end}
 	</div>
 {.end}
