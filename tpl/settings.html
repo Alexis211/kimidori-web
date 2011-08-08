@@ -1,0 +1,61 @@
+~~LOAD base
+~~DEFINE title
+	<title>Mes options | Kimidori</title>
+~~DEFINE body
+	<div id="top">
+		<h1>Paramètres du compte</h1>
+		{.section Data.Message}<p class="message">{@}</p>{.end}
+		{.section Data.Error}<p class="error">{@}</p>{.end}
+	</div>
+	<div class="leftblock">
+		{.section Sess.Admin}
+			<p class="error">Attention : ces informations seront écrasées par la configuration
+			du serveur</p>
+		{.end}
+		<h2>Vos informations</h2>
+		<form method="post" class="big_form">
+		<label for="email">Adresse e-mail : </label>
+		<input type="text" name="email" id="email" value="{Data.Email}" /><br />
+		<label for="fullname">Nom complet : </label>
+		<input type="text" name="fullname" id="fullname" value="{Data.FullName}" /><br />
+		<input type="submit" value="Modifier" />
+		</form>
+		<h3>Changer de mot de passe</h3>
+		<form method="post" class="big_form">
+		<label for="apw">Mot de passe actuel : </label>
+		<input type="password" name="apw" id="apw" /><br />
+		<label for="pw1">Nouveau mot de passe : </label>
+		<input type="password" name="pw1" id="pw1" /><br />
+		<label for="pw2">Confirmation : </label>
+		<input type="password" name="pw2" id="pw2" /><br />
+		<input type="submit" value="Modifier" />
+		</form>
+	</div>
+	<div class="rightblock">
+		<h2>Affichage des furigana</h2>
+		<p>Même si vous choisissez de cacher les furigana, vous pourrez toujours
+		les afficher en passant la souris sur le mot.</p>
+		<form method="post" class="big_form">
+		<label>Mots de la leçon : </label>
+			<input type="radio" name="lessfuri" value="always" id="lfa"
+				{.section Sess.User.LFAlways}checked="checked"{.end} />
+			<label class="rclabel" for="lfa">Toujours afficher</label><br />
+			<input type="radio" name="lessfuri" value="notknown" id="lfnk"
+				{.section Sess.User.LFNotKnown}checked="checked"{.end} />
+			<label class="rclabel" for="lfnk">Si le mot n'est pas su</label><br />
+			<input type="radio" name="lessfuri" value="notstudying" id="lfns"
+				{.section Sess.User.LFNotStudying}checked="checked"{.end} />
+			<label class="rclabel" for="lfns">Si le mot n'est pas étudié</label><br />
+			<input type="radio" name="lessfuri" value="never" id="lfn"
+				{.section Sess.User.LFNever}checked="checked"{.end} />
+			<label class="rclabel" for="lfn">Ne jamais afficher</label><br />
+		<label>Autres furigana : </label>
+			<input type="radio" name="anyfuri" value="always" id="afa"
+				{.section Sess.User.AFAlways}checked="checked"{.end} />
+			<label class="rclabel" for="afa">Toujours afficher</label><br />
+			<input type="radio" name="anyfuri" value="never" id="afn"
+				{.section Sess.User.AFNever}checked="checked"{.end} />
+			<label class="rclabel" for="afn">Ne jamais afficher</label><br />
+		<input type="submit" value="Enregistrer" />
+		</form>
+	</div>

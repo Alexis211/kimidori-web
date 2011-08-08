@@ -9,8 +9,10 @@
 		<h1>{.section Lesson}{Info.Title}{.end} - {Title}</h1>
 		{DescHTML}
 	</div>
+{.end}
+{.section Data.ChunkText}
 	<div class="bodyblock">
-		{Contents}
+		{@}
 	</div>
 {.end}
 ~~DEFINE bottom
@@ -18,5 +20,5 @@
 	<a href="/chunk_summary/{Level.Id}/{Lesson.Id}/{Id}">Retour au sommaire</a>
 {.end}
 {.section Data.Lesson}
-	<a href="/browse/{Level.Id}/{Id}">Retour à la leçon</a>
+	<a href="/browse/{Level.Id}/{Id}" class="right">Retour à la leçon</a>
 {.end}

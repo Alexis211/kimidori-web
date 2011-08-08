@@ -101,6 +101,12 @@ ul img, ol img {
 	font-family: monospace, courier, serif
 }
 
+.message {
+	text-align: center;
+	color: blue;
+	font-family: monospace, courier, serif
+}
+
 /* tables */
 
 th, td {
@@ -196,7 +202,9 @@ button img {
 }
 
 .rclabel {
+	display: inline;
 	text-align: left;
+	padding-left: 8px;
 	border: 0px;
 }
 
@@ -444,7 +452,8 @@ blockquote {
 	font-size: 1em;
 }
 
-.furi div {
+.furi div, .furi span {
+	display: block;
 	font-size: 0.55em;
 	text-align: center;
 }

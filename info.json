@@ -9,6 +9,8 @@
 		"MustEnterPassword": "Vous devez entrer un mot de passe.",
 		"MustEnterSamePasswordTwice": "Vous devez entrer deux fois le même mot de passe.",
 		"MustEnterEmail": "Vous devez entrer votre adresse e-mail.",
-		"UsernameTaken": "Ce nom d'utilisateur est déjà pris."
+		"UsernameTaken": "Ce nom d'utilisateur est déjà pris.",
+		"InfoUpdated": "Vos informations ont bien été mises à jour.",
+		"BadActualPassword": "Vous n'avez pas entré le bon mot de passe."
 	}
 }
