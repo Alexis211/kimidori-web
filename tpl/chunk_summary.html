@@ -27,21 +27,24 @@
 				{.section Repeat}mémorisation{.end}
 				{.section RepeatDone} (terminé){.end}
 				{.section Done}terminé{.end}</p>
-			<button onclick="window.location='/chunk_drill/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}'">
-			<img src="/image/blue_arrow_b_b.png" />Mode apprentissage</button>
+			{.section Chunk.HasSRS}
+				<button onclick="window.location='/chunk_drill/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}'">
+				<img src="/image/blue_arrow_b_b.png" />Mode apprentissage</button><br />
+			{.end}
 			{.section Reading}{.or}
-				<br /><button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/reading'">
-				<img src="/image/red_cross.png" />{.section Done}Marquer non su{.or}Arrêter la mémorisation{.end}</button>
+				<button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/reading'">
+				<img src="/image/red_cross.png" />{.section Done}Marquer non su{.or}Arrêter la mémorisation{.end}</button><br />
 			{.end}
-			{.section Repeat}{.or}
-				<br /><button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/repeat'">
-				<img src="/image/green_arrow_r.png" />Mémoriser</button>
-			{.end}
+			{.section Chunk.HasSRS}{.section Repeat}{.or}
+				<button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/repeat'">
+				<img src="/image/green_arrow_r.png" />Mémoriser</button><br />
+			{.end}{.end}
 			{.section Done}{.or}
-				<br /><button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/done'">
+				<button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/done'">
 				{.section RepeatDone}
-					<img src="/image/check.png" />{.or}
-					<img src="/image/orange_dot.png" />{.end}Marquer comme su</button>
+					<img src="/image/check.png" />{.or}{.section Chunk.HasSRS}
+					<img src="/image/orange_dot.png" />{.or}
+					<img src="/image/check.png" />{.end}{.end}Marquer comme su</button>
 			{.end}
 		{.end}
 	</div>
