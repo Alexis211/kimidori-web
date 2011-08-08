@@ -339,10 +339,10 @@ button img {
 .bar .r2 {
 	background-color: #FF7700;
 }
-.bar .r3 {
+.bar .r3, .bar .r4 {
 	background-color: #FFDD00;
 }
-.bar .r4 {
+.bar .rknown {
 	background-color: green;
 }
 .bar .di {
