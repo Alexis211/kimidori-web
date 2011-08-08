@@ -20,6 +20,7 @@
 	</form>
 	<div id="dic" style="display: none"></div>
 	<div id="topbar" class="menubar">
+		<a class="right" href="/help">Aide</a>
 	{.section Sess.User}
 		<a class="right" href="/settings">{Username}</a>
 		<a class="right" href="/logout?back={Request.URL.RawPath}">Déconnexion</a>
@@ -34,7 +35,7 @@
 	</div>
 ~~CALL body
 	<div id="bottombar" class="menubar">
-		<a href="ajstk.org/kimidori" class="right">Comment contribuer ?</a>
+		<a href="/how_to_contribute" class="right">Comment contribuer ?</a>
 ~~CALL bottom
 {.section Sess.Admin}
 		<a href="/reload_tpl?back={Request.URL.RawPath}">reload_tpl</a>

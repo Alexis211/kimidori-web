@@ -1,6 +1,14 @@
 {
-	"Static": [
-		["style", "text/css"],
-		["image", "image/png"],
-	]
+	"ExtraPages": ["how_to_contribute", "help"],
+	"Messages": {
+		"BadUserOrPass": "Nom d'utilisateur ou mot de passe incorect.",
+		"NoSuchLevel": "Ce niveau n'existe pas.",
+		"NoSuchLesson": "Cette leçon n'existe pas.",
+		"NoSuchChunk": "Cette section n'existe pas.",
+		"NoSuchDictionary": "Ce dictionnaire n'existe pas.",
+		"MustEnterPassword": "Vous devez entrer un mot de passe.",
+		"MustEnterSamePasswordTwice": "Vous devez entrer deux fois le même mot de passe.",
+		"MustEnterEmail": "Vous devez entrer votre adresse e-mail.",
+		"UsernameTaken": "Ce nom d'utilisateur est déjà pris."
+	}
 }
