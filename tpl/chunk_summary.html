@@ -9,16 +9,43 @@
 		<h1>{.section Lesson}{Info.Title}{.end} - {Title}</h1>
 		<p>{DescHTML}</p>
 	</div>
+{.end}
 	<div class="leftblock">
-		<h2>Sommaire</h2>
-		<ol>
-		{.repeated section Summary}
-			<li>{@}</li>
+		{.section Data.Chunk}
+			<h2>Sommaire</h2>
+			<ol>
+			{.repeated section Summary}
+				<li>{@}</li>
+			{.end}
+			</ol>
+			<button onclick="window.location='/chunk_read/{Level.Id}/{Lesson.Id}/{Id}'">
+				<img src="/image/blue_arrow_r.png" />Lire</button><br />
 		{.end}
-		</ol>
-		<button onclick="window.location='/chunk_read/{Level.Id}/{Lesson.Id}/{Id}'">
-			<img src="/image/blue_arrow_r.png" />Lire</button><br />
+		{.section Data.Study}
+			<p><br /><strong>État de l'étude :</strong>
+				{.section Reading}lecture{.end}
+				{.section Repeat}mémorisation{.end}
+				{.section RepeatDone} (terminé){.end}
+				{.section Done}terminé{.end}</p>
+			<button onclick="window.location='/chunk_drill/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}'">
+			<img src="/image/blue_arrow_b_b.png" />Mode apprentissage</button>
+			{.section Reading}{.or}
+				<br /><button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/reading'">
+				<img src="/image/red_cross.png" />{.section Done}Marquer non su{.or}Arrêter la mémorisation{.end}</button>
+			{.end}
+			{.section Repeat}{.or}
+				<br /><button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/repeat'">
+				<img src="/image/green_arrow_r.png" />Mémoriser</button>
+			{.end}
+			{.section Done}{.or}
+				<br /><button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/done'">
+				{.section RepeatDone}
+					<img src="/image/check.png" />{.or}
+					<img src="/image/orange_dot.png" />{.end}Marquer comme su</button>
+			{.end}
+		{.end}
 	</div>
+{.section Data.Chunk}
 	<div class="rightblock">
 		<h2>Eléments à apprendre</h2>
 		{.repeated section SRSItems}

@@ -16,10 +16,10 @@
 			{.section LessonsWS}
 				{.repeated section LessonsWS}
 					<li>
-					{.section Available}<img src="/image/orange_arrow_r.png" />{.or}
-					{.section Studying}<img src="/image/blue_arrow_r.png" />{.or}
-					{.section Done}<img src="/image/check.png" />{.or}
-					<img src="/image/red_dot.png" />{.end}{.end}{.end}
+					{.section Available}<img src="/image/orange_arrow_r.png" title="disponnible pour être étudiée" />{.or}
+					{.section Studying}<img src="/image/blue_arrow_r.png" title="en cours d'étude" />{.or}
+					{.section Done}<img src="/image/check.png" title="sue" />{.or}
+					<img src="/image/red_dot.png" title="non disponnible pour l'étude" />{.end}{.end}{.end}
 					<a href="/browse/{Lesson.Level.Id}/{Lesson.Id}">{Lesson.Info.Title}</a></li>
 				{.end}
 			{.or}
@@ -43,10 +43,10 @@
 			<ol>
 			{.repeated section ChunksWS}
 				<li>
-				{.section Reading}<img src="/image/orange_arrow_r.png" />{.or}
-				{.section Repeat}<img src="/image/blue_arrow_r.png" />{.or}
-				{.section Done}<img src="/image/check.png" />{.or}
-				<img src="/image/orange_dot.png" />{.end}{.end}{.end}
+				{.section Reading}<img src="/image/orange_arrow_r.png" title="non su, lecture en cours" />{.or}
+				{.section Repeat}<img src="/image/blue_arrow_r.png" title="en cours de mémorisation" />{.or}
+				{.section Done}<img src="/image/check.png" title="su" />{.or}
+				<img src="/image/orange_dot.png" title="leçon non étudiée" />{.end}{.end}{.end}
 				<a href="/chunk_summary/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}">{Chunk.Title}</a></li>
 			{.or}
 				Aucun contenu dans cette section...
