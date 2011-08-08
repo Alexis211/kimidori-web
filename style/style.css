@@ -437,10 +437,10 @@ blockquote {
 .sib2 {
 	border-left: 2px solid #FF7700;
 }
-.sib3 {
+.sib3, .sib4 {
 	border-left: 2px solid #FFDD00;
 }
-.sib4 {
+.siknown {
 	border-left: 2px solid green;
 }
 

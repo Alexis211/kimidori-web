@@ -48,14 +48,14 @@
 			{.end}
 		{.end}
 	</div>
-{.section Data.Chunk}
+{.section Data}
 	<div class="rightblock">
 		<h2>Eléments à apprendre</h2>
-		{.repeated section SRSItems}
-			<div class="{.section Long}srs_item_big{.or}srs_item{.end}">
-				<h6>{Group} / {Subgroup}</h6>
-				<strong>{HTMLWithFuri}</strong>
-				{Meaning}
+		{.repeated section SRSItemsWS}
+			<div class="{.section Item.Long}srs_item_big{.or}srs_item{.end}{.section Known} siknown{.or}{.section Studying} sib{Box}{.end}{.end}">
+				<h6>{Item.Group} / {Item.Subgroup}</h6>
+				<strong>{Item.HTMLWithFuri}</strong>
+				{Item.Meaning}
 			</div>
 		{.or}
 			<p>Rien à apprendre pour l'instant... mais ça ne va pas tarder !</p>
