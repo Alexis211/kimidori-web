@@ -3,15 +3,23 @@
 {.section Data}
 	<title>{.section Chunk}{Title} | {.end}{.section Lesson}{Info.Title} | {.end}Kimidori</title>
 {.end}
+~~DEFINE scripts
+	<script type="text/javascript" src="/js/slides.js"></script>
+	<script type="text/javascript">
+
+{.section Data}
+const chunk_toc = {ToCJSON};
+{.end}
+
+	</script>
 ~~DEFINE body
 {.section Data.Chunk}
 	<div id="top">
 		<h1>{.section Lesson}{Info.Title}{.end} - {Title}</h1>
-		{DescHTML}
 	</div>
 {.end}
 	<div class="bodyblock">
-		<span class="tool_link">
+		<span class="tool_link" style="margin-top: -6px;">
 		{.section Data.Chunk}
 			<a href="/chunk_summary/{Level.Id}/{Lesson.Id}/{Id}">retour au sommaire</a>
 		{.end}
@@ -19,8 +27,9 @@
 			| <a href="/browse/{Level.Id}/{Id}" class="right">retour à la leçon</a>
 		{.end}
 		</span>
-		<div style="clear: both;">{.section Data.ChunkText}{@}{.end}</div>
+		{.section Data.ChunkText}{@}{.end}
 	</div>
+	<div class="bottomblock" id="prevnext"></div>
 ~~DEFINE bottom
 {.section Data.Chunk}
 	<a href="/chunk_summary/{Level.Id}/{Lesson.Id}/{Id}">Retour au sommaire</a>

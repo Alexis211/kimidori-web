@@ -17,8 +17,8 @@
 		{.section Data.Chunk}
 			<h2>Sommaire</h2>
 			<ol>
-			{.repeated section Summary}
-				<li>{@}</li>
+			{.repeated section ToC}
+				<li><a href="/chunk_read/{FullId}#part{Number}">{Title}</a></li>
 			{.end}
 			</ol>
 			<button onclick="window.location='/chunk_read/{FullId}'">

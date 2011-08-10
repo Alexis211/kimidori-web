@@ -109,11 +109,16 @@ ul img, ol img {
 
 /* tables */
 
+table {
+	width: 90%
+}
+
 th, td {
 	min-width: 50px;
 	text-align: left;
 	vertical-align: top;
 	padding: 2px;
+	padding-left: 6px;
 }
 th {
 	text-align: center;
@@ -238,7 +243,7 @@ button img {
 
 /* ************************** PAGE LAYOUT ELEMENTS *************************** */
 
-#top, .leftblock, .rightblock, .bodyblock {
+#top, .leftblock, .rightblock, .bodyblock, .bottomblock {
 	margin: 8px;
 	padding: 8px;
 	padding-top: 0px;
@@ -247,6 +252,14 @@ button img {
 
 #top {
 	border-bottom: 1px solid #eee;
+}
+
+.bottomblock {
+	border-top: 1px solid #eee;
+	margin: 0px;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 8px;
 }
 
 .leftblock {
@@ -265,11 +278,13 @@ button img {
 
 .bodyblock {
 	padding: 16px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 .bodyblock p, .bodyblock ul, .bodyblock ol {
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 .bodyblock h1 {
@@ -456,6 +471,7 @@ blockquote {
 /* ***************** course content : stroke order diagram *********** */
 
 .sod {
+	clear: both;
 	float: right;
 	margin-top: -10px;
 }
