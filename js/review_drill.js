@@ -88,6 +88,7 @@ var SRS = {
 	shuffledItems: [],
 	currentItem: 0,
 	successCount: 0,
+	gotoZeroAfter: -1,
 	failCount: 0,
 	totalCount: 0,
 	unsavedSuccess: [],
@@ -147,6 +148,15 @@ var SRS = {
 		if (SRS.currentItem >= SRS.shuffledItems.length) {
 			SRS.currentItem = 0;
 			SRS.shuffledItems.shuffle();
+		} else if (srs_mode == SM_REVIEW) {
+			if (SRS.gotoZeroAfter < 1) {
+				if (SRS.gotoZeroAfter == 0) {
+					SRS.currentItem = 0;
+				}
+				SRS.gotoZeroAfter = 5 + Math.floor(Math.random() * 4);
+			} else {
+				SRS.gotoZeroAfter--;
+			}
 		}
 
 		SRS.shuffledItems[SRS.currentItem].showQuestion();
