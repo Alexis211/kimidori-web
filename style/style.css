@@ -10,7 +10,7 @@
 * {
 	margin: 0px;
 	padding: 0px;
-	text-align: justify;
+	text-align: left;
 	font-family: Arial;
 	font-size: 15px;
 }
@@ -75,6 +75,10 @@ p, ul, ol, li {
 
 p {
 	text-indent: 8px;
+}
+
+p, blockquote {
+	text-align: justify;
 }
 
 ul, ol {
@@ -380,7 +384,7 @@ p .bar {
 .review_form div {
 	display: inline-block;
 	margin: 8px;
-	width: 400px;
+	width: 450px;
 	height: 60px;
 	margin-left: 216px;
 	text-align: center;
@@ -402,7 +406,7 @@ p .bar {
 }
 
 .review_form textarea {
-	width: 400px;
+	width: 450px;
 	height: 60px;
 	font-size: 1.4em;
 }
