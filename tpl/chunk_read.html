@@ -10,15 +10,22 @@
 		{DescHTML}
 	</div>
 {.end}
-{.section Data.ChunkText}
 	<div class="bodyblock">
-		{@}
+		<span class="tool_link">
+		{.section Data.Chunk}
+			<a href="/chunk_summary/{Level.Id}/{Lesson.Id}/{Id}">retour au sommaire</a>
+		{.end}
+		{.section Data.Lesson}
+			| <a href="/browse/{Level.Id}/{Id}" class="right">retour à la leçon</a>
+		{.end}
+		</span>
+		<div style="clear: both;">{.section Data.ChunkText}{@}{.end}</div>
 	</div>
-{.end}
 ~~DEFINE bottom
 {.section Data.Chunk}
 	<a href="/chunk_summary/{Level.Id}/{Lesson.Id}/{Id}">Retour au sommaire</a>
 {.end}
+	<a href="/study_home" class="right">Retour à mes études</a>
 {.section Data.Lesson}
 	<a href="/browse/{Level.Id}/{Id}" class="right">Retour à la leçon</a>
 {.end}
