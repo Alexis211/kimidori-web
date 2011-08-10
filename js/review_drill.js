@@ -124,7 +124,7 @@ var SRS = {
 	},
 	saveAndExit: function() {
 		SRS.save();
-		window.location = '/srs_home';
+		window.location = srs_return_to;
 	},
 
 	updateProgressDisplay: function() {

@@ -12,6 +12,14 @@
 {.section Data}
 const srs_mode = {.section IsDrill}SM_DRILL{.or}SM_REVIEW{.end};
 const srs_data = {Data};
+{.section Chunk}
+const srs_return_to = '/chunk_summary/{FullId}';
+{.or}{.section Lesson}
+const srs_return_to = '/study_home';
+{.or}
+const srs_return_to = '/srs_home';
+{.end}{.end}
+
 {.or}
 alert("Gros fail... lol :D");
 {.end}
@@ -22,10 +30,10 @@ alert("Gros fail... lol :D");
 <div id="tout">
 	<div id="topbar" class="menubar">
 		{.section Data}{.section IsDrill}
-			<a class="right" href="/srs_home">Arrêter</a>
+			<a class="right" href="#" onclick="window.location=srs_return_to;">Arrêter</a>
 			<a href="#">&nbsp;</a>
 		{.or}
-			<a href="/srs_home">Arrêter sans enregistrer</a>
+			<a href="#" onclick="window.location=srs_return_to;">Arrêter sans enregistrer</a>
 			<a class="right" href="#" onclick="SRS.saveAndExit();">Enregistrer et arrêter</a>
 		{.end}{.end}
 	</div>
