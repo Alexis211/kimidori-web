@@ -6,7 +6,20 @@
 ~~DEFINE body
 {.section Data}
 	<div id="top">
-		<p class="error">NOT YET IMPLEMENTED. HERE : SRS STATUS</p>
+		{.repeated section SRSData}
+			<div class="study_resume_item_head">
+				<strong>{Name} :</strong>
+				{BarHTML}
+				{.section HasStudy}<a href="/srs_tomorrow_drill/{Path}">{ToStudy} à travailler</a>&nbsp;&nbsp;{.end}
+				{.section HasReview}
+					<a href="/srs_review/{Path}">{ToReview} à revoir</a>
+				{.or}
+					<span>rien à revoir</span>
+				{.end}
+			</div>
+		{.or}
+			<p>Ici s'affichera l'état de vos révisions, dès que vous aurez quelque chose à réviser...</p>
+		{.end}
 	</div>
 	<div class="leftblock">
 		{.section Level}
@@ -52,7 +65,7 @@
 				Aucun contenu dans cette section...
 			{.end}
 			</ol>
-			<button onclick="window.location='/lesson_drill'">
+			<button onclick="window.location='/lesson_drill/{FullId}'">
 			<img src="/image/blue_arrow_b_b.png" />Mode apprentissage</button>
 		{.end}
 	</div>

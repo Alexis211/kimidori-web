@@ -1,0 +1,42 @@
+~~LOAD base
+~~DEFINE title
+{.section Data}
+	<title>Mes révisions | Kimidori</title>
+{.end}
+~~DEFINE body
+{.section Data}
+	<div id="top">
+		<h1>Révisions</h1>
+		<p>Cette page résume l'état de vos révisions pour tous les niveaux de tous les
+		groupes d'éléments à étudier.</p>
+		<p>Vous pouvez activer ou désactiver des groupes d'étude pour les inclure ou pas dans la révision
+		générale de tout le contenu.</p>
+	</div>
+	<div class="bodyblock">
+		{.repeated section SRSData}
+			<div class="study_resume_item_head">
+				<h2>{Name} :</h2>
+				{BarHTML}
+				{.section HasStudy}<a href="/srs_tomorrow_drill/{Path}">{ToStudy} à travailler</a>&nbsp;&nbsp;{.end}
+				{.section HasReview}<a href="/srs_review/{Path}">{ToReview} à revoir</a>{.end}
+			</div>
+			{.repeated section SubGroups}
+				<div class="study_resume_item">
+					{.section Disabled}
+						<a class="tool_link" href="/srs_activate/{Path}">activer</a>
+					{.or}
+						<a class="tool_link" href="/srs_deactivate/{Path}">désactiver</a>
+					{.end}
+					<strong>{Name}</strong>
+					{BarHTML}
+					{.section Disabled}
+						<span>(desactivé)</span>
+					{.or}
+						{.section HasStudy}<a href="/srs_tomorrow_drill/{Path}">{ToStudy} à travailler</a>&nbsp;&nbsp;{.end}
+						{.section HasReview}<a href="/srs_review/{Path}">{ToReview} à revoir</a>{.end}
+					{.end}
+				</div>
+			{.end}
+		{.end}
+	</div>
+{.end}

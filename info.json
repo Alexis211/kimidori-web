@@ -11,6 +11,7 @@
 		"MustEnterEmail": "Vous devez entrer votre adresse e-mail.",
 		"UsernameTaken": "Ce nom d'utilisateur est déjà pris.",
 		"InfoUpdated": "Vos informations ont bien été mises à jour.",
-		"BadActualPassword": "Vous n'avez pas entré le bon mot de passe."
+		"BadActualPassword": "Vous n'avez pas entré le bon mot de passe.",
+		"NothingToStudy": "Il n'y a aucun élément à étudier ici."
 	}
 }

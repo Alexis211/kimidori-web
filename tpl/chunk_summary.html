@@ -18,7 +18,7 @@
 				<li>{@}</li>
 			{.end}
 			</ol>
-			<button onclick="window.location='/chunk_read/{Level.Id}/{Lesson.Id}/{Id}'">
+			<button onclick="window.location='/chunk_read/{FullId}'">
 				<img src="/image/blue_arrow_r.png" />Lire</button><br />
 		{.end}
 		{.section Data.Study}
@@ -28,15 +28,15 @@
 				{.section RepeatDone} (terminé){.end}
 				{.section Done}terminé{.end}</p>
 			{.section Chunk.HasSRS}
-				<button onclick="window.location='/chunk_drill/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}'">
+				<button onclick="window.location='/chunk_drill/{Chunk.FullId}'">
 				<img src="/image/blue_arrow_b_b.png" />Mode apprentissage</button><br />
 			{.end}
 			{.section Reading}{.or}
-				<button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/reading'">
+				<button onclick="window.location='/go_chunk/{Chunk.FullId}/reading'">
 				<img src="/image/red_cross.png" />{.section Done}Marquer non su{.or}Arrêter la mémorisation{.end}</button><br />
 			{.end}
 			{.section Chunk.HasSRS}{.section Repeat}{.or}
-				<button onclick="window.location='/go_chunk/{Chunk.Level.Id}/{Chunk.Lesson.Id}/{Chunk.Id}/repeat'">
+				<button onclick="window.location='/go_chunk/{Chunk.FullId}/repeat'">
 				<img src="/image/green_arrow_r.png" />Mémoriser</button><br />
 			{.end}{.end}
 			{.section Done}{.or}

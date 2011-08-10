@@ -1,3 +1,5 @@
+/* For kimidori-web, written by Alex AUVOLAT, BSD license. */
+
 var Dic = {
 	"dicFile": "edict-en",
 	"submit": function() {

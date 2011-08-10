@@ -285,7 +285,7 @@ button img {
 /* ************************ STYLE FOR STUDY-PROGRAM-SPECIFIC ELEMENTS **************** */
 
 .study_resume_item .tool_link {
-	margin-right: 200px;
+	margin-right: 150px;
 }
 
 .study_resume_item a, .study_resume_item span {
@@ -316,6 +316,11 @@ button img {
 	margin-left: 30px;
 }
 
+p .bar {
+	margin-bottom: 0px;
+	margin-right: 30px;
+}
+
 .study_resume_item .bar {
 	height: 5px;
 	padding-bottom: 6px;
@@ -325,7 +330,7 @@ button img {
 	height: 10px;
 }
 
-.bar .r0, .bar .r1, .bar .r2, .bar .r3, .bar .r4, .bar .di {
+.bar .r0, .bar .r1, .bar .r2, .bar .r3, .bar .r4, .bar .rknown, .bar .di {
 	display: inline-block;
 	height: 100%;
 }
@@ -346,12 +351,16 @@ button img {
 	background-color: green;
 }
 .bar .di {
-	background-color: #aaaaaa;
+	background-color: #cccccc;
 }
 
 /************************** review system ****************** */
 
 /* some elements of .review_form previously, with .big_form. */
+
+.review_form {
+	margin-top: -10px;
+}
 
 .review_form div {
 	display: inline-block;

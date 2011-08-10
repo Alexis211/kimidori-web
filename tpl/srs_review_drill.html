@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Révisions | Kimidori</title>
+	<link rel="stylesheet" type="text/css" href="/style/style.css" media="screen" />
+	<script type="text/javascript" src="/js/prototype.js"></script>
+	<script type="text/javascript" src="/js/review_drill.js"></script>
+	<script type="text/javascript">
+
+{.section Data}
+const srs_mode = {.section IsDrill}SM_DRILL{.or}SM_REVIEW{.end};
+const srs_data = {Data};
+{.or}
+alert("Gros fail... lol :D");
+{.end}
+
+	</script>
+</head>
+<body onload="SRS.start()">
+<div id="tout">
+	<div id="topbar" class="menubar">
+		{.section Data}{.section IsDrill}
+			<a class="right" href="/srs_home">Arrêter</a>
+			<a href="#">&nbsp;</a>
+		{.or}
+			<a href="/srs_home">Arrêter sans enregistrer</a>
+			<a class="right" href="#" onclick="SRS.saveAndExit();">Enregistrer et arrêter</a>
+		{.end}{.end}
+	</div>
+	<div id="top">
+		{.section Data}
+			<h1>{.section IsDrill}Apprentissage{.or}Révision{.end}
+			{.section Group} : {Group}{.section SubGroup} ({SubGroup}){.end}{.end}
+			{.section Lesson} : {Title}{.end}
+			{.section Chunk} : {Title}{.end}
+			</h1>
+			{.section IsDrill}
+				<p><strong>Mode apprentissage :</strong> dans ce mode, vous avez droit à autant d'erreurs que
+				vous le souhaitez : les éléments à apprendre vous seront re-proposés jusqu'à ce que vous les
+				ayez bien retenus. <em>Vos performances dans ce mode ne seront pas enregistrées</em>.</p>
+			{.end}
+		{.end}
+		<p style="text-align: center" id="progress">chargement en cours...</p>
+	</div>
+	<div class="bodyblock">
+
+	<form onsubmit="SRS.check(); return false;" class="review_form" id="q_form" style="display: none">
+		<label>Groupe :</label><div id="q_g_div" style="height: 20px;"></div><br />
+		<label for="m">Signification :</label><div id="q_m_div"></div><br />
+		<label for="j">Japonais :</label><div id="q_j_div"></div><br />
+		<label for="r">Lecture :</label><div id="q_r_div"></div><br />
+		<button tabindex="3"><img src="/image/blue_arrow_r.png" />Vérifier</button>
+	</form>
+
+	<form onsubmit="return false;" class="review_form" id="a_form" style="display: none">
+		<label>Groupe :</label><div id="a_g_div" style="height: 20px;"></div><br />
+		<label>Signification :</label><div id="a_m_div"></div><br />
+		<label>Japonais :</label><div id="a_j_div"></div><br />
+		<label>Lecture :</label><div id="a_r_div"></div><br />
+		<label>Commentaire :</label><div id="a_c_div"></div><br />
+		<label>Note personnelle :</label><div>(non implémenté)</div><br />
+		<button onclick="SRS.success();" id="a_sb" tabindex="1"><img src="../image/check.png" />Correct</button><br />
+		<button onclick="SRS.fail();" tabindex="2"><img src="../image/red_cross.png" />Faux</button>
+	</form>
+
+
+	</div>
+</div>
+</body>
+</html>
