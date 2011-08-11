@@ -88,11 +88,12 @@ var SRS = {
 	shuffledItems: [],
 	currentItem: 0,
 	successCount: 0,
-	gotoZeroAfter: -1,
+	gotoZeroAfter: 6,
 	failCount: 0,
 	totalCount: 0,
 	unsavedSuccess: [],
 	unsavedFail: [],
+	exitAfterSaving: false,
 
 	start: function() {
 		// 1. Load up srs_data into SRSItem instances, in SRS.shuffledItems
@@ -118,14 +119,15 @@ var SRS = {
 			},
 			onSuccess: function(t) {
 				SRS.updateProgressDisplay();
+				if (SRS.exitAfterSaving) window.location = srs_return_to;
 			},
 		});
 		SRS.unsavedSuccess = [];
 		SRS.unsavedFail = [];
 	},
 	saveAndExit: function() {
+		SRS.exitAfterSaving = true;
 		SRS.save();
-		window.location = srs_return_to;
 	},
 
 	updateProgressDisplay: function() {
@@ -150,17 +152,19 @@ var SRS = {
 			SRS.shuffledItems.shuffle();
 		} else if (srs_mode == SM_REVIEW) {
 			if (SRS.gotoZeroAfter < 1) {
-				if (SRS.gotoZeroAfter == 0) {
+				if (SRS.gotoZeroAfter == 0 && SRS.shuffledItems.length - SRS.currentItem > 3) {
 					SRS.currentItem = 0;
 				}
-				SRS.gotoZeroAfter = 5 + Math.floor(Math.random() * 4);
+				SRS.gotoZeroAfter = 6;
 			} else {
-				SRS.gotoZeroAfter--;
+				if (SRS.currentItem != 0) SRS.gotoZeroAfter--;
 			}
 		}
 
 		SRS.shuffledItems[SRS.currentItem].showQuestion();
 		SRS.updateProgressDisplay();
+
+		if (SRS.unsavedSuccess.length + SRS.unsavedFail.length > 5) SRS.save();
 	},
 	check: function() {
 		SRS.shuffledItems[SRS.currentItem].showAnswer();
