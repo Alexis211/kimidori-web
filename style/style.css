@@ -443,7 +443,7 @@ blockquote {
 
 .srs_item strong {
 	display: inline-block;
-	min-width: 130px;
+	min-width: 250px;
 	padding-right: 16px;
 }
 

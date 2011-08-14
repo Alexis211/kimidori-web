@@ -106,8 +106,10 @@ var SRS = {
 		SRS.next();
 	},
 	save: function() {
-		if (SRS.unsavedSuccess.length == 0 && SRS.unsavedFail.length == 0) return;
-		if (srs_mode != SM_REVIEW) return;
+		if ((SRS.unsavedSuccess.length == 0 && SRS.unsavedFail.length == 0) || srs_mode != SM_REVIEW) {
+			if (SRS.exitAfterSaving) window.location = srs_return_to;
+			return;
+		}
 
 		var s = Object.toJSON(SRS.unsavedSuccess);;
 		var f = Object.toJSON(SRS.unsavedFail);
@@ -150,7 +152,7 @@ var SRS = {
 		if (SRS.currentItem >= SRS.shuffledItems.length) {
 			SRS.currentItem = 0;
 			SRS.shuffledItems.shuffle();
-		} else if (srs_mode == SM_REVIEW) {
+		} else {
 			if (SRS.gotoZeroAfter < 1) {
 				if (SRS.gotoZeroAfter == 0 && SRS.shuffledItems.length - SRS.currentItem > 3) {
 					SRS.currentItem = 0;
